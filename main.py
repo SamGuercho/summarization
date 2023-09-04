@@ -17,6 +17,7 @@ if __name__ == "__main__":
     llm_manager = LLMTaskHandler("google/flan-t5-xxl", torch_dtype=torch.bfloat16)
     parameters = llm_manager.llm.print_number_of_trainable_model_parameters()
     tokenized_prompt = llm_manager.get_tokenized_prompt(text)
+    summary = llm_manager.predict(text)
     # dataset_name = "knkarthick/dialogsum"
     # model_name = "google/flan-t5-xl"
     # # model_name = "gpt-3.5-turbo-16k"

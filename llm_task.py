@@ -13,4 +13,7 @@ class LLMTask(ProjectObject):
 
     def _get_prompt(self):
         if self.task.upper() == "SUMMARIZE":
-            return PromptSummarize()
+            return PromptSummarize(2)
+
+    def predict(self, text):
+        input_ids = tokenizer(prompt, return_tensors="pt").input_ids
