@@ -10,3 +10,6 @@ class LLMTaskHandler(ProjectObject):
         self.input_processor = ItemPreprocessor(checkpoint, **kwargs)
         self.llm_task = LLMTask(checkpoint, task, **kwargs)
         self.llm = self.llm_task.llm
+
+    def get_tokenized_prompt(self, text):
+        return self.llm_task.prompt.tokenize_prompt(text, self.input_processor)
